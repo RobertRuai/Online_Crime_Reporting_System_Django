@@ -19,7 +19,7 @@ def home(request):
     return render(request, 'webapp/index.html')
 
 
-# - Register a user
+# - Register user
 
 def register(request):
 
