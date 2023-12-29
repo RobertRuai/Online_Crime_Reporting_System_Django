@@ -23,5 +23,10 @@ urlpatterns = [
 
     path('record/<int:pk>', views.singular_record, name="record"),
 
-    path('delete-record/<int:pk>', views.delete_record, name="delete-record"),
+    path('delete-record/<int:pk>', views.delete_record, name="delete-record")
+
+    path('reportsuspect/', views.reportsuspectView, name="reportsuspect"),
+#    path('wanted/', views.wantedView, name="wanted-list"),
+#    path('tips/', views.tipsView, name="tips"),
+#    path('announcements/', views.news, name="news")
 ]
