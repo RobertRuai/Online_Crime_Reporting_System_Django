@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, LoginForm, CreateRecordForm, UpdateRecordForm
+#from .forms import CreateUserForm, LoginForm, CreateRecordForm, UpdateRecordForm
+from .forms import *
 
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 
 from django.contrib.auth.decorators import login_required
 
-from .models import Record
+from .models import *
 
 from django.contrib import messages
 
@@ -168,3 +169,22 @@ def user_logout(request):
     messages.success(request, "Logout success!")
 
     return redirect("my-login")
+
+@login_required(login_url='my-login')
+def reportsuspectView(request):
+    rsForm = reportSuspectForm()
+    if request.method == 'POST':
+        rsForm = reportSuspectForm(request.POST)
+        if rsForm.is_valid():
+            rsForm.save()
+        return redirect('dashboard')
+
+    context ={'rsForm':rsForm}
+    return render(request, 'webapp/reportsuspect.html', context)
+
+#def wantedView(request):
+#    wanted_list = wantedSuspect.objects.all()
+#    context = {
+#        'wanted_list': wanted_list
+#    }
+#    return render(request, 'webapp/wanted.html', context)
