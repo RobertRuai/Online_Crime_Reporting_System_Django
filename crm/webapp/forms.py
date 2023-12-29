@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from .models import Record
+from .models import *
 
 from django import forms
 
@@ -26,7 +26,7 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(widget=PasswordInput())
 
 
-# - Create a record
+# - Create a complaint
 
 class CreateRecordForm(forms.ModelForm):
 
@@ -36,7 +36,7 @@ class CreateRecordForm(forms.ModelForm):
         fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
 
 
-# - Update a record
+# - Update a cpmplaint
 
 class UpdateRecordForm(forms.ModelForm):
 
@@ -44,3 +44,14 @@ class UpdateRecordForm(forms.ModelForm):
 
         model = Record
         fields = ['first_name', 'last_name', 'email', 'phone', 'address', 'city', 'province', 'country']
+
+#added forms
+class reportSuspectForm(ModelForm):
+    class Meta:
+        model = ReportSuspect
+        fields = '__all__'
+
+#class reportCrimeForm(ModelForm):
+#    class Meta:
+#        model = ReportCrimeModel
+#        fields ='__all__'
