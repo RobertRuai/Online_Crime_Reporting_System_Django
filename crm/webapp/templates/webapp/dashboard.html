@@ -8,7 +8,7 @@
 
     <a class="btn btn-outline-primary btn-sm" href="{% url 'create-record' %}">
 
-       File a Complaint &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+       Enter your details &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
 
     </a>
 
@@ -73,5 +73,109 @@
 
     </table>
 
+	<br>
+
+	<a class="btn btn-outline-primary btn-sm" href="{% url 'reportsuspect' %}">
+
+       Report a Suspect &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+    </a>
+    
+    <hr>
+
+    <table class="table table-hover table-bordered">
+
+        <thead class="table-light">
+
+            <tr>
+
+                <th scope="col"> ID </th>
+                <th scope="col"> Suspect name </th>
+                <th scope="col"> Location of Incident </th>
+                <th scope="col"> Dress Code </th>
+                <th scope="col"> Description of Incident </th>
+                <th scope="col"> Gender </th>
+
+                <th scope="col"> View </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% if suspects %}
+
+            {% for suspect in suspects %}
+
+            <tr>
+
+                <td> {{suspect.id}} </td>
+
+                <td> {{suspect.suspect_name}} </td>
+
+                <td> {{suspect.location}} </td>
+
+                <td> {{suspect.dresscode}} </td>
+                <td> {{suspect.incident_description}} </td>
+                <td> {{suspect.sex}} </td>
+
+                <td> <a class="btn btn-success btn-sm" href="{% url 'suspect' suspect.id %}"> <i class="fa fa-eye" aria-hidden="true"></i> </a> </td>
+
+            </tr>
+
+            {% endfor %}
+        
+        {% endif %}
+
+
+        </tbody>
+
+
+    </table>
+
+	<hr>
+
+	<br>
+
+	<h5> Wanted List!! </h5>
+
+    <table class="table table-hover table-bordered">
+
+	  <thead class="table-light">
+
+	    <tr>
+
+		  <th scope="col"> ID </th>
+		  <th scope="col"> Suspect name </th>
+		  <th scope="col"> Dress Code </th>
+		  <th scope="col"> Gender </th>
+		  
+		  <th scope="col"> View </th>
+		</tr>
+
+      </thead>
+
+      <tbody>
+
+	  {% if suspects %}
+	      {% for suspect in suspects %}
+		  <tr>
+		    <td> {{suspect.id}} </td>
+			<td> {{suspect.suspect_name}} </td>
+			<td> {{suspect.dresscode}} </td>
+			<td> {{suspect.sex}} </td>
+
+			<td> <a class="btn btn-success btn-sm" href="{% url 'suspect' suspect.id %}"> <i class="fa fa-eye" aria-hidden="true"></i> </a> </td>
+
+		  </tr>
+		  
+		  {% endfor %}
+
+      {% endif %}
+
+     </tbody>
+
+  </table>
 
 {% endblock %}
