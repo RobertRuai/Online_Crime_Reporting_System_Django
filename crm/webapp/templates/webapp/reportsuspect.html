@@ -1,0 +1,68 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <body>
+
+        <div class="container bg-light shadow-md p-5 form-layout">
+
+            <h3> Report a suspect you May have come across </h3>
+
+            <h6> Start adding in the required details. </h6>
+
+            <hr>
+            <br>
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                {{rsForm.suspect_name|as_crispy_field}}
+
+                <br>
+
+                {{rsForm.location|as_crispy_field}}
+
+                <br>
+
+                {{rsForm.dresscode|as_crispy_field}}
+
+                <br>
+
+                {{rsForm.incident_description|as_crispy_field}}
+
+                <br>
+
+                {{rsForm.sex|as_crispy_field}}
+
+                <br>
+
+                
+                <button type="submit" class="btn btn-primary"> 
+                    
+                    Submit &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+
+                </button>
+
+                &nbsp;
+
+                <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+                    Go Back &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+                </a>
+
+
+            </form>
+
+        </div>
+
+        <br>
+
+    </body>
+
+{% endblock %}
