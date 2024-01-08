@@ -1,0 +1,65 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <body>
+
+        <div class="container bg-light shadow-md p-5 form-layout">
+
+            <h3> File a new Report </h3>
+			<h3> By Admin only* </h3>
+
+            <hr>
+            <br>
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                {{cform.title|as_crispy_field}}
+
+                <br>
+
+                {{cform.suspect_name|as_crispy_field}}
+
+                <br>
+
+                {{cform.description|as_crispy_field}}
+
+                <br>
+
+				{{cform.reported_by|as_crispy_field}}
+
+				<br>
+
+                {{cform.status|as_crispy_field}}
+
+                <br>
+                
+                <button type="submit" class="btn btn-primary"> 
+                    
+                    Submit &nbsp; <i class="fa fa-check" aria-hidden="true"></i>
+
+                </button>
+
+                &nbsp;
+
+                <a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+
+
+                    Go Back &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+                </a>
+
+            </form>
+
+        </div>
+
+        <br>
+
+    </body>
+
+{% endblock %}

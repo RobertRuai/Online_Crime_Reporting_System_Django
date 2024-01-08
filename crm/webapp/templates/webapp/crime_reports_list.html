@@ -1,0 +1,43 @@
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+
+    <div class="card">
+
+
+        <div class="card-body">
+
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+
+            <strong>   
+
+                {{suspect.suspect_name|upper}}
+    
+            </strong>
+    
+            <hr> 
+
+            {% for report in crime_reports %}
+              <div>
+                <h3>{{ report.title }}</h3>
+				<p> <strong> Suspect Name: </strong> {{ report.suspect_name }}</p>
+                <p> <strong> Description of Report: </strong> {{ report.description }}</p>
+				<p> <strong> Reported By: </strong> {{ report.reported_by }}</p>
+				<p> <strong> Date Created: </strong> {{ report.created_at }}</p>
+                <p> <strong> Status: </strong> {{ report.get_status_display }}</p>
+              </div>
+            {% endfor %}
+
+        </div>
+
+
+    </div>
+
+    <br>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i> </a>
+
+    &nbsp;
+
+{% endblock %}

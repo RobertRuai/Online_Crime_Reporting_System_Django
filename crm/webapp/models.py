@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Record(models.Model):
+#user = models.ForeignKey(User, on_delete=models.CASCADE)
     creation_date = models.DateTimeField(auto_now_add=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)

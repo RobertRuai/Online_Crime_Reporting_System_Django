@@ -105,7 +105,9 @@ def update_record(request, pk):
 @login_required(login_url='my-login')
 def singular_record(request, pk):
     all_records = Record.objects.get(id=pk)
-    context = {'record':all_records}
+    context = {
+        'record':all_records
+    }
     return render(request, 'webapp/view-record.html', context=context)
 
 
