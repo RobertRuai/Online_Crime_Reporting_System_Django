@@ -7,12 +7,6 @@ Digitization of Records: Crime reporting solutions used today are trivial. Crime
 The Online Crime Reporting System serves as a digital platform where individuals can efficiently report and document incidents, suspects, suspicious activities, or crimes they witness. Leveraging modern web technologies, the system facilitates a seamless and user-friendly interface accessible to a diverse range of users.
 
 
-## Table of Contents
-* [Tech Stack](##tech Stack)
-* [User Features of Online Crime Reporting System in Django](#user Features of Online Crime Reporting System in Django)
-* [Authors](#authors)
-* [Instructions for executing locally:](#instructions for executing locally:)
-
 
 ## Tech Stack
 Python
