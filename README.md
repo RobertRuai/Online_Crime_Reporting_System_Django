@@ -8,7 +8,7 @@ The Online Crime Reporting System serves as a digital platform where individuals
 
 
 ## Table of Contents
-* [Tech Stack](#tech Stack)
+* [Tech Stack](##tech Stack)
 * [User Features of Online Crime Reporting System in Django](#user Features of Online Crime Reporting System in Django)
 * [Authors](#authors)
 * [Instructions for executing locally:](#instructions for executing locally:)
