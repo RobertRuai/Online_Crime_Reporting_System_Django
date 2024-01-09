@@ -8,26 +8,35 @@ The Online Crime Reporting System serves as a digital platform where individuals
 
 
 ## Table of Contents
-* [Tech Stack](#Tech Stack)
-* [User Features of Online Crime Reporting System in Django](#User Features of Online Crime Reporting System in Django)
+* [Tech Stack](#tech Stack)
+* [User Features of Online Crime Reporting System in Django](#user Features of Online Crime Reporting System in Django)
 * [Authors](#authors)
-* [Instructions for executing locally:](#Instructions for executing locally:)
+* [Instructions for executing locally:](#instructions for executing locally:)
 
 
 ## Tech Stack
 Python
+
 Django
+
 Javascript/Jquery
+
 SQLite
+
 Bootstrap 4
+
 Django Rest Framework
 
 
 ## User Features of Online Crime Reporting System in Django
 1.Registration – For the registration, The user need to register first to create their own account.
+
 2.Login – By default the user need to login first to enable to access the system.
+
 3.Add, update, delete a record - a user can add and update their personal records on to the website database.
+
 3.Add Complaint – For the complaint, The user can view and add complaint through this website.
+
 4.Report Suspect - User can report a suspect they may have identified.
 
 
@@ -37,8 +46,13 @@ Django Rest Framework
 
 ## Instructions for executing locally:
 cd Online_Crime_Reporting_System_Django/
+
 pip3 install -r requirements.txt
+
 cd crm/
+
 python3 manage.py makemigrations
+
 python3 manage.py migrate
+
 python3 manage.py runserver
