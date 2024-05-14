@@ -39,14 +39,14 @@ Django Rest Framework
 
 
 ## Instructions for executing locally:
-cd Online_Crime_Reporting_System_Django/
+```cd Online_Crime_Reporting_System_Django/```
 
-pip3 install -r requirements.txt
+```pip3 install -r requirements.txt```
 
-cd crm/
+```cd crm/```
 
-python3 manage.py makemigrations
+```python3 manage.py makemigrations```
 
-python3 manage.py migrate
+```python3 manage.py migrate```
 
-python3 manage.py runserver
+```python3 manage.py runserver```
